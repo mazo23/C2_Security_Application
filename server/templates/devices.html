@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devices Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Devices List</h1>
+
+        {% if devices %}
+        <table class="devices-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>OS Name</th>
+                    <th>OS Version</th>
+                    <th>Last Seen</th>
+                    <th>Watchlist Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for device in devices %}
+                <tr>
+                    <td>{{ device.id }}</td>
+                    <td>{{ device.os_name }}</td>
+                    <td>{{ device.os_version }}</td>
+                    <td>{{ device.last_seen }}</td>
+                    <td>{{ 'Yes' if device.watchlist else 'No' }}</td>
+                    <td>
+                        <div class="actions">
+                            {% if device.watchlist %}
+                                <a href="/remove_from_watchlist/{{ device.id }}" class="btn btn-remove">Remove from Watchlist</a>
+                            {% else %}
+                                <a href="/add_to_watchlist/{{ device.id }}" class="btn btn-add">Add to Watchlist</a>
+                            {% endif %}
+                            <a href="/device/{{ device.id }}/apps" class="btn btn-info">Show Installed Apps</a>
+                            <a href="/device/{{ device.id }}/commands" class="btn btn-command">Commands</a>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No devices found.</p>
+        {% endif %}
+
+        <a href="/" class="btn btn-back">Back to Home</a>
+
+        <!-- Section for displaying command output dynamically -->
+        {% if command %}
+        <div class="command-output">
+            <h2>Command Output for Device {{ command.device_id }}</h2>
+            <pre>{{ command.output }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

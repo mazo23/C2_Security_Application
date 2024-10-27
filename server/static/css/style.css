@@ -1,0 +1,144 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+h1.title {
+    font-size: 2.8rem;
+    color: #444;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1.5px;
+}
+
+.menu {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.button {
+    text-decoration: none;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    margin: 15px;
+    display: inline-block;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+/* Table Styles */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #f8f8f8;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.styled-table th, .styled-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+.styled-table th {
+    background-color: #6a11cb;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: none;
+}
+
+.watchlist-active {
+    background-color: #d4edda;
+}
+
+.watchlist-inactive {
+    background-color: #f8d7da;
+}
+
+.no-data {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 20px;
+}
+
+.action-link {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.action-link:hover {
+    color: #6a11cb;
+}
+
+/* List Styles for Installed Apps */
+.app-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.app-list li {
+    padding: 12px 15px;
+    background-color: #f1f1f1;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+}
+
+.app-list li:hover {
+    background-color: #e8e8e8;
+}
+
+/* Back Link */
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #2575fc;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: 2px solid #2575fc;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    background-color: #2575fc;
+    color: white;
+}
